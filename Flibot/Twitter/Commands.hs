@@ -1,5 +1,5 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
-module Flibot.Twitter.Command where
+module Flibot.Twitter.Commands where
 
 import Flibot.Twitter.Common
 
@@ -12,3 +12,8 @@ post :: String -> IO Types.Status
 post mes  = runTwitter $ do
   res <- call $ update $ T.pack mes
   return res
+
+botScreenName :: IO T.Text
+botScreenName = runTwitter $ do
+           res <- call $ accountVerifyCredentials
+           return $ userScreenName res

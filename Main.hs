@@ -32,7 +32,7 @@ main = do
 
 response :: T.Text -> Status -> Maybe T.Text
 response t s
-  | t `isBeginWith` "hello" = Just $ liftIO $ T.append "Hello, " (s ^. user . userScreenName)
+  | t `isBeginWith` "hello" = Just $ T.append "Hello, " (s ^. user . userScreenName)
   | t `isBeginWith` "echo" = Just $ T.strip $ t `withOut` "echo"
   | otherwise = Nothing
 

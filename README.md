@@ -5,7 +5,7 @@
 ## install
 Create ```Config.hs``` in the root dir of this project.
 
-```Config.hs
+```haskell
 {-# LANGUAGE OverloadedStrings #-}
 module Config where
 
